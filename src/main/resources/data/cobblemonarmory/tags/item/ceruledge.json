@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "cobblemonarmory:ceruledge_armor_helmet",
+    "cobblemonarmory:ceruledge_armor_chestplate",
+    "cobblemonarmory:ceruledge_armor_leggings",
+    "cobblemonarmory:ceruledge_armor_boots",
+    "cobblemonarmory:ceruledge_sword"
+  ]
+}

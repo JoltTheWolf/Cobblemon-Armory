@@ -1,0 +1,14 @@
+{
+ "target": "cobblemon:greninja",
+
+ "drops": {
+   "amount": 1,
+   "entries": [
+     {
+       "item": "cobblemonarmory:greninja_scarf",
+       "percentage": 30.0,
+       "quantityRange": "1"
+     }
+   ]
+ }
+}
