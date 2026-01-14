@@ -18,5 +18,6 @@ public class CobblemonArmory implements ModInitializer {
         ItemGroupRegistry.init();
         LootInjectorRegistry.init();
         RightClickEntityRegistry.init();
+        ComponentRegistry.init();
 	}
 }
