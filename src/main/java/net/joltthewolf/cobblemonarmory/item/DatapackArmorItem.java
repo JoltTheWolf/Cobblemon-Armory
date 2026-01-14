@@ -22,10 +22,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
-import net.minecraft.world.item.ItemStack;
-
-
-
 
 
 
@@ -95,7 +91,6 @@ public class DatapackArmorItem extends ArmorItem implements GeoItem {
                 if (this.renderer == null)
                     this.renderer = new DatapackArmorRenderer();
 
-                // CRITICAL: feed the current stack so the model can read armor_set_id
                 this.renderer.setCurrentStack(itemStack);
 
                 return this.renderer;
@@ -107,10 +102,9 @@ public class DatapackArmorItem extends ArmorItem implements GeoItem {
             public DatapackArmorItemRenderer getGeoItemRenderer() {
                 if (this.itemRenderer == null)
                     this.itemRenderer = new DatapackArmorItemRenderer();
-
-                this.itemRenderer.setCurrentStack(this.lastStack);
                 return this.itemRenderer;
             }
+
 
         });
     }

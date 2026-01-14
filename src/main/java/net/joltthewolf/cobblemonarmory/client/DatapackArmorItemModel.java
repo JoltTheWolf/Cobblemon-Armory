@@ -13,18 +13,19 @@ public class DatapackArmorItemModel extends GeoModel<DatapackArmorItem> {
         this.currentStack = stack == null ? ItemStack.EMPTY : stack;
     }
 
-    private ResourceLocation getIconTexture() {
+    private ResourceLocation iconTexture(DatapackArmorItem animatable) {
         if (currentStack.isEmpty())
-            return ResourceLocation.fromNamespaceAndPath("cobblemonarmory", "item/missing");
+            return ResourceLocation.fromNamespaceAndPath("cobblemonarmory", "textures/item/missing.png");
 
         ResourceLocation setId = DatapackArmorItem.getSetId(currentStack);
         if (setId == null)
-            return ResourceLocation.fromNamespaceAndPath("cobblemonarmory", "item/missing");
+            return ResourceLocation.fromNamespaceAndPath("cobblemonarmory", "textures/item/missing.png");
 
-        String piece = DatapackArmorItem.pieceSuffixFor(DatapackArmorItem.getArmorType(currentStack));
+        String piece = DatapackArmorItem.pieceSuffixFor(animatable.getType());
+
         return ResourceLocation.fromNamespaceAndPath(
                 setId.getNamespace(),
-                "item/" + setId.getPath() + "_" + piece
+                "textures/item/" + setId.getPath() + "_" + piece + ".png"
         );
     }
 
@@ -35,7 +36,7 @@ public class DatapackArmorItemModel extends GeoModel<DatapackArmorItem> {
 
     @Override
     public ResourceLocation getTextureResource(DatapackArmorItem animatable) {
-        return getIconTexture();
+        return iconTexture(animatable);
     }
 
     @Override
